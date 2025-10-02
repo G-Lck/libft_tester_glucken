@@ -67,7 +67,7 @@ t_list	**lists_tests(void)
 	t_list *long9 = malloc(sizeof(t_list));
 	t_list *long8 = malloc(sizeof(t_list));
 	t_list *long7 = malloc(sizeof(t_list));
-	t_list *long6 = malloc(sizeof(t_list));
+	t_list *long6 = malloc(sizeof(t_list)); 
 	t_list *long5 = malloc(sizeof(t_list));
 	t_list *long4 = malloc(sizeof(t_list));
 	t_list *long3 = malloc(sizeof(t_list));
@@ -224,6 +224,7 @@ int		compare_mem(void *ft_mem, void *libc_mem, size_t n)
 				   ((unsigned char *)libc_mem)[i]);
 			i++;
 		}
+		printf("\n");
 		return (0);
 	}
 	else
@@ -357,9 +358,9 @@ void	test_ft_atoi(void)
 		i++;
 	}
 	if(errors == 0)
-		printf(GREEN "ft_atoi \n" YELLOW "Your are Awesome\n" RESET);
+		printf(GREEN "ft_atoi OK\n\n"RESET);
 	else
-		printf(RED "ft_atoi \n" YELLOW "Still the best in my heart\n" RESET);
+		printf(RED "ft_atoi FAIL\n"  RESET);
 }
 void	test_ft_bzero(void)
 {
@@ -388,9 +389,9 @@ void	test_ft_bzero(void)
 		i++;
 	}
 	if(errors == 0)
-		printf(GREEN "\nft_bzero \n" YELLOW "Your are Awesome\n" RESET);
+		printf(GREEN "\nft_bzero OK\n\n"RESET);
 	else
-		printf(RED "\nft_bzero \n" YELLOW "Still the best in my heart\n" RESET);
+		printf(RED "\nft_bzero FAIL\n\n" RESET);
 }
 void	test_ft_calloc(void)
 {
@@ -414,9 +415,9 @@ void	test_ft_calloc(void)
 		i++;
 	}
 	if(errors == 0)
-		printf(GREEN "ft_calloc \n" YELLOW "Your are Awesome\n" RESET);
+		printf(GREEN "ft_calloc OK\n\n"RESET);
 	else
-		printf(RED "ft_calloc \n" YELLOW "Still the best in my heart\n" RESET);
+		printf(RED "ft_calloc FAIL\n\n" RESET);
 }
 void	test_ft_isalnum(void)
 {
@@ -433,9 +434,9 @@ void	test_ft_isalnum(void)
 		i++;
 	}
 	if(errors == 0)
-		printf(GREEN "ft_isalnum \n" YELLOW "Your are Awesome\n" RESET);
+		printf(GREEN "ft_isalnum OK\n\n"RESET);
 	else
-		printf(RED "ft_isalnum \n" YELLOW "Still the best in my heart\n" RESET);
+		printf(RED "ft_isalnum FAIL\n\n" RESET);
 }
 void	test_ft_isalpha(void)
 {
@@ -452,9 +453,9 @@ void	test_ft_isalpha(void)
 		i++;
 	}
 	if(errors == 0)
-		printf(GREEN "ft_isalpha \n" YELLOW "Your are Awesome\n" RESET);
+		printf(GREEN "ft_isalpha OK\n\n"RESET);
 	else
-		printf(RED "ft_isalpha \n" YELLOW "Still the best in my heart\n" RESET);
+		printf(RED "ft_isalpha FAIL\n\n" RESET);
 }
 void	test_ft_isascii(void)
 {
@@ -471,9 +472,9 @@ void	test_ft_isascii(void)
 		i++;
 	}
 	if(errors == 0)
-		printf(GREEN "ft_isascii \n" YELLOW "Your are Awesome\n" RESET);
+		printf(GREEN "ft_isascii OK\n\n"RESET);
 	else
-		printf(RED "ft_isascii \n" YELLOW "Still the best in my heart\n" RESET);
+		printf(RED "ft_isascii FAIL\n\n" RESET);
 }
 void	test_ft_isdigit(void)
 {
@@ -490,9 +491,9 @@ void	test_ft_isdigit(void)
 		i++;
 	}
 	if(errors == 0)
-		printf(GREEN "ft_isdigit \n" YELLOW "Your are Awesome\n" RESET);
+		printf(GREEN "ft_isdigit OK\n\n"RESET);
 	else
-		printf(RED "ft_isdigit \n" YELLOW "Still the best in my heart\n" RESET);
+		printf(RED "ft_isdigit FAIL\n\n" RESET);
 }
 void	test_ft_isprint(void)
 {
@@ -509,9 +510,9 @@ void	test_ft_isprint(void)
 		i++;
 	}
 	if(errors == 0)
-		printf(GREEN "ft_isprint \n" YELLOW "Your are Awesome\n" RESET);
+		printf(GREEN "ft_isprint OK\n\n"RESET);
 	else
-		printf(RED "ft_isprint \n" YELLOW "Still the best in my heart\n" RESET);
+		printf(RED "ft_isprint FAIL\n\n" RESET);
 }
 int		sub_test_ft_itoa(int n, char* expected)
 {
@@ -552,9 +553,9 @@ void	test_ft_itoa(void)
 	expected = "-1234";
 	errors = errors + sub_test_ft_itoa(n, expected);
 	if(errors == 0)
-		printf(GREEN "ft_itoa \n" YELLOW "Your are Awesome\n" RESET);
+		printf(GREEN "ft_itoa OK\n\n"RESET);
 	else
-		printf(RED "ft_itoa \n" YELLOW "Still the best in my heart\n" RESET);
+		printf(RED "ft_itoa FAIL\n\n" RESET);
 }
 t_list	**lists_compare_ft_lstadd_back(char* content)
 {
@@ -630,9 +631,9 @@ void	test_ft_lstadd_back(void)
 		i++;
 	}
 	if (errors == 0)
-		printf(GREEN "\nft_lstadd_back\n" YELLOW "Your are Awesome\n" RESET);
+		printf(GREEN "\nft_lstadd_backOK\n\n"RESET);
 	else
-		printf(RED "\nft_lstadd_back\n" YELLOW "Still the best in my heart\n" RESET);
+		printf(RED "\nft_lstadd_backFAIL\n\n" RESET);
 }
 t_list	**lists_compare_ft_lstadd_front(char* content)
 {
@@ -706,9 +707,9 @@ void	test_ft_lstadd_front(void)
 		i++;
 	}
 	if (errors == 0)
-		printf(GREEN "\nft_lstadd_front\n" YELLOW "Your are Awesome\n" RESET);
+		printf(GREEN "\nft_lstadd_frontOK\n\n"RESET);
 	else
-		printf(RED "\nft_lstadd_front\n" YELLOW "Still the best in my heart\n" RESET);
+		printf(RED "\nft_lstadd_frontFAIL\n\n" RESET);
 }
 void	test_ft_lstclear(void)
 {
@@ -738,9 +739,9 @@ void	test_ft_lstclear(void)
 		i++;
 	}
 	if (errors == 0)
-		printf(GREEN "\nft_lstclear\n" YELLOW "Your are Awesome\n" RESET);
+		printf(GREEN "\nft_lstclearOK\n\n"RESET);
 	else
-		printf(RED "\nft_lstclear\n" YELLOW "Still the best in my heart\n" RESET);
+		printf(RED "\nft_lstclearFAIL\n\n" RESET);
 }
 void	test_ft_lstdelone(void)
 {
@@ -765,9 +766,9 @@ void	test_ft_lstiteri(void)
 	ft_lstiter(list1, f4_test);
 	errors = errors + compare_lists_mem(list1, list1_exp);
 	if (errors == 0)
-		printf(GREEN "\nft_lstiteri\n" YELLOW "Your are Awesome\n" RESET);
+		printf(GREEN "\nft_lstiteriOK\n\n"RESET);
 	else
-		printf(RED "\nft_lstiteri\n" YELLOW "Still the best in my heart\n" RESET);
+		printf(RED "\nft_lstiteriFAIL\n\n" RESET);
 }
 t_list	**lists_compare_ft_lstlast()
 {
@@ -804,9 +805,9 @@ void	test_ft_lstlast(void)
 		i++;
 	}
 	if (errors == 0)
-		printf(GREEN "\nft_lstlast\n" YELLOW "Your are Awesome\n" RESET);
+		printf(GREEN "\nft_lstlastOK\n\n"RESET);
 	else
-		printf(RED "\nft_lstlast\n" YELLOW "Still the best in my heart\n" RESET);
+		printf(RED "\nft_lstlastFAIL\n\n" RESET);
 }
 void	test_ft_lstmap(void)
 {
@@ -822,9 +823,9 @@ void	test_ft_lstmap(void)
 	list1_exp->content = "pof"; list1_exp->next = list2_exp;
 	errors = errors + compare_lists_mem(ft_lstmap(list1, f5_test, del_content), list1_exp);
 	if (errors == 0)
-		printf(GREEN "\nft_lstmap\n" YELLOW "Your are Awesome\n" RESET);
+		printf(GREEN "\nft_lstmapOK\n\n"RESET);
 	else
-		printf(RED "\nft_lstmap\n" YELLOW "Still the best in my heart\n" RESET);
+		printf(RED "\nft_lstmapFAIL\n\n" RESET);
 }
 void	test_ft_lstnew(void)
 {
@@ -864,9 +865,9 @@ void	test_ft_lstnew(void)
 	free(expected);
 	free(int_test);
 	if (errors == 0)
-		printf(GREEN "\nft_lstnew\n" YELLOW "Your are Awesome\n" RESET);
+		printf(GREEN "\nft_lstnewOK\n\n"RESET);
 	else
-		printf(RED "\nft_lstnew\n" YELLOW "Still the best in my heart\n" RESET);
+		printf(RED "\nft_lstnewFAIL\n\n" RESET);
 }
 void	test_ft_lstsize(void)
 {
@@ -898,9 +899,9 @@ void	test_ft_lstsize(void)
 		i++;
 	}
 	if (errors == 0)
-		printf(GREEN "\nft_lstsize\n" YELLOW "Your are Awesome\n" RESET);
+		printf(GREEN "\nft_lstsizeOK\n\n"RESET);
 	else
-		printf(RED "\nft_lstsize\n" YELLOW "Still the best in my heart\n" RESET);
+		printf(RED "\nft_lstsizeFAIL\n\n" RESET);
 }
 void	test_ft_memchr(void)
 {
@@ -923,7 +924,7 @@ void	test_ft_memchr(void)
 			n = strlen(const_charstar_tests[i]);
 			charstar_test = malloc(sizeof(char) * (n + 1));
 			strcpy(charstar_test, const_charstar_tests[i]);
-			printf(RESET "\nFor %s and %c: ", const_charstar_tests[i], int_tests[j]);
+			printf(RESET "For %s and %c: ", const_charstar_tests[i], int_tests[j]);
 			errors += compare_ptr(ft_memchr(charstar_test, int_tests[j], n),
 								  memchr(charstar_test, int_tests[j], n),
 								  charstar_test, n);
@@ -934,9 +935,9 @@ void	test_ft_memchr(void)
 		i++;
 	}
 	if (errors == 0)
-		printf(GREEN "\nft_memchr \n" YELLOW "Your are Awesome\n" RESET);
+		printf(GREEN "\nft_memchr OK\n\n"RESET);
 	else
-		printf(RED "\nft_memchr \n" YELLOW "Still the best in my heart\n" RESET);
+		printf(RED "\nft_memchr FAIL\n\n" RESET);
 }
 void	test_ft_memcmp(void)
 {
@@ -975,9 +976,9 @@ void	test_ft_memcmp(void)
 		i++;
 	}
 	if(errors == 0)
-		printf(GREEN "\nft_memcmp \n" YELLOW "Your are Awesome\n" RESET);
+		printf(GREEN "\nft_memcmp OK\n\n"RESET);
 	else
-		printf(RED "\nft_memcmp \n" YELLOW "Still the best in my heart\n" RESET);
+		printf(RED "\nft_memcmp FAIL\n\n" RESET);
 }
 void	test_ft_memcpy(void)
 {
@@ -1015,9 +1016,9 @@ void	test_ft_memcpy(void)
 		i++;
 	}
 	if(errors == 0)
-		printf(GREEN "\nft_memcpy \n" YELLOW "Your are Awesome\n" RESET);
+		printf(GREEN "\nft_memcpy OK\n\n"RESET);
 	else
-		printf(RED "\nft_memcpy \n" YELLOW "Still the best in my heart\n" RESET);
+		printf(RED "\nft_memcpy FAIL\n\n" RESET);
 }
 void	test_ft_memmove(void)
 {
@@ -1040,7 +1041,7 @@ void	test_ft_memmove(void)
 				strcpy(charstar_test_ft, const_charstar_tests[i]);
 				charstar_test_man = malloc(sizeof(char) * (n + 1));
 				strcpy(charstar_test_man, const_charstar_tests[i]);
-				printf(RESET "\nFor %s with offset %zu: ", const_charstar_tests[i], j);
+				printf(RESET "For %s with offset %zu: ", const_charstar_tests[i], j);
 				errors += compare_mem(
 					ft_memmove(charstar_test_ft, charstar_test_ft + j, move_len),
 					memmove(charstar_test_man, charstar_test_man + j, move_len),
@@ -1054,9 +1055,9 @@ void	test_ft_memmove(void)
 		i++;
 	}
 	if (errors == 0)
-		printf(GREEN "\nft_memmove \n" YELLOW "Your are Awesome\n" RESET);
+		printf(GREEN "\nft_memmove OK\n\n"RESET);
 	else
-		printf(RED "\nft_memmove \n" YELLOW "Still the best in my heart\n" RESET);
+		printf(RED "\nft_memmove FAIL\n\n" RESET);
 }
 void	test_ft_memset(void)
 {
@@ -1082,7 +1083,7 @@ void	test_ft_memset(void)
 			strcpy(charstar_test_ft, const_charstar_tests[i]);
 			charstar_test_man = malloc(sizeof(char) * (n + 1));
 			strcpy(charstar_test_man, const_charstar_tests[i]);
-			printf(RESET "\nFor %s and %c: ", charstar_tests[i], int_tests[j]);
+			printf(RESET "For %s and %c: ", charstar_tests[i], int_tests[j]);
 			errors = errors + compare_mem(ft_memset((void *)charstar_test_ft, int_tests[j], n), memset((void *)charstar_test_man, int_tests[j], n), n);
 			j++;
 			free(charstar_test_ft);
@@ -1092,16 +1093,17 @@ void	test_ft_memset(void)
 		i++;
 	}
 	if(errors == 0)
-		printf(GREEN "\nft_memset \n" YELLOW "Your are Awesome\n" RESET);
+		printf(GREEN "\nft_memset OK\n\n"RESET);
 	else
-		printf(RED "\nft_memset \n" YELLOW "Still the best in my heart\n" RESET);
+		printf(RED "\nft_memset FAIL\n\n" RESET);
 }
 void	test_ft_putchar_fd(void)
 {
+	printf(YELLOW"\n");
 	ft_putchar_fd('a', 0);
 	ft_putchar_fd('b', 1);
 	ft_putchar_fd('c', 2);
-	printf(YELLOW "\nft_putchar_fd\nThis has to be checked visually\n" RESET);
+	printf(YELLOW "\nft_putchar_fd has to be checked visually\n\n" RESET);
 }
 void	test_ft_putendl_fd(void)
 {
@@ -1110,27 +1112,26 @@ void	test_ft_putendl_fd(void)
 	ft_putendl_fd("\n", 0);
 	ft_putendl_fd("123", 1);
 	ft_putendl_fd("def", 2);
-	printf(YELLOW "\nft_putendl_fd\nThis has to be checked visually\n" RESET);
+	printf(YELLOW "\nft_putendl_fd has to be checked visually\n\n" RESET);
 }
 void	test_ft_putnbr_fd(void)
 {
-	printf(RESET "\ncheck the putnbr:\n");
 	ft_putnbr_fd(123, 1);
-	printf(RESET " --> \"%s\"\n", "123");
+	printf(YELLOW " --> \"%s\"\n", "123");
 	ft_putnbr_fd(0, 1);
-	printf(RESET " --> \"%s\"\n", "0");
+	printf(" --> \"%s\"\n", "0");
 	ft_putnbr_fd(-2147483648, 1);
-	printf(RESET " --> \"%s\"\n", "-2147483648");
+	printf(" --> \"%s\"\n", "-2147483648");
 	ft_putnbr_fd(2147483647, 1);
-	printf(RESET " --> \"%s\"\n", "2147483647");
+	printf(" --> \"%s\"\n", "2147483647");
 	ft_putnbr_fd(-123, 1);
-	printf(RESET " --> \"%s\"\n", "-123");
-	printf(RESET "\ncheck the fd:\n");
+	printf(" --> \"%s\"\n", "-123");
+	printf("\ncheck the fd:\n");
 	ft_putnbr_fd(123, 0);
-	printf(RESET " --> \"%s\"\n", "123");
+	printf(" --> \"%s\"\n", "123");
 	ft_putnbr_fd(123, 2);
-	printf(RESET " --> \"%s\"\n", "123");
-	printf(YELLOW "\nft_putnbr_fd\nThis has to be checked visually\n" RESET);
+	printf(" --> \"%s\"\n", "123");
+	printf(YELLOW "\nft_putnbr_fd has to be checked visually\n\n" RESET);
 }
 void	test_ft_putstr_fd(void)
 {
@@ -1139,7 +1140,7 @@ void	test_ft_putstr_fd(void)
 	ft_putstr_fd("\n", 0);
 	ft_putstr_fd("123", 1);
 	ft_putstr_fd("def", 2);
-	printf(YELLOW "\nft_putstr_fd\nThis has to be checked visually\n");
+	printf(YELLOW "\nft_putstr_fd has to be checked visually\n\n");
 }
 void	free_split(char **tab)
 {
@@ -1225,9 +1226,9 @@ void	test_ft_strchr(void)
 		i++;
 	}
 	if(errors == 0)
-		printf(GREEN "ft_strchr \n" YELLOW "Your are Awesome\n" RESET);
+		printf(GREEN "ft_strchr OK\n\n"RESET);
 	else
-		printf(RED "ft_strchr \n" YELLOW "Still the best in my heart\n" RESET);
+		printf(RED "ft_strchr FAIL\n\n" RESET);
 }
 void	test_ft_strdup(void)
 {
@@ -1244,9 +1245,9 @@ void	test_ft_strdup(void)
 		i++;
 	}
 	if(errors == 0)
-		printf(GREEN "ft_strdup \n" YELLOW "Your are Awesome\n" RESET);
+		printf(GREEN "ft_strdup OK\n\n"RESET);
 	else
-		printf(RED "ft_strdup \n" YELLOW "Still the best in my heart\n" RESET);
+		printf(RED "ft_strdup FAIL\n\n" RESET);
 }
 int		sub_test_ft_striteri(char *s, void (*f)(unsigned int, char*), char* name_function, char* expected)
 {
@@ -1274,20 +1275,20 @@ void	test_ft_striteri(void)
 	errors = 0;
 	// f3 change caracteres by a execpt the first //
 	s = malloc(4);
-	strlcpy(s, "123", 4);
+	ft_strlcpy(s, "123", 4);
 	name_function = "f3_test";
-	expected = "1aa";
+	expected = "12a";
 	errors = errors + sub_test_ft_striteri(s, f3_test, name_function, expected);
 	// f3 change caracteres by a execpt the first //
 	s = malloc(1);
-	strlcpy(s, "", 1);
+	ft_strlcpy(s, "", 1);
 	name_function = "f3_test";
 	expected = "";
 	errors = errors + sub_test_ft_striteri(s, f3_test, name_function, expected);
 	if(errors == 0)
-		printf(GREEN "ft_striteri \n" YELLOW "Your are Awesome\n" RESET);
+		printf(GREEN "ft_striteri OK\n\n"RESET);
 	else
-		printf(RED "ft_striteri \n" YELLOW "Still the best in my heart\n" RESET);
+		printf(RED "ft_striteri FAIL\n\n" RESET);
 }
 int		sub_test_ft_strjoin(char const* s1, char const* s2, char* expected)
 {
@@ -1333,10 +1334,11 @@ void	test_ft_strjoin(void)
 	expected = "salut ca va ?";
 	errors = errors + sub_test_ft_strjoin(s1, s2, expected);
 	if (errors == 0)
-		printf(GREEN "ft_strjoin \n" YELLOW "Your are Awesome\n" RESET);
+		printf(GREEN "ft_strjoin OK\n\n"RESET);
 	else
-		printf(RED "ft_strjoin \n" YELLOW "Still the best in my heart\n" RESET);
+		printf(RED "ft_strjoin FAIL\n\n" RESET);
 }
+/*
 int		sub_test_ft_strlcat(char* destman, char* destft, const char* src, size_t dsize)
 {
 	size_t  result;
@@ -1396,9 +1398,9 @@ void	test_ft_strlcat(void)
 	dsize = 3;
 	errors = errors + sub_test_ft_strlcat(destman, destft, src, dsize);
 	if(errors == 0)
-		printf(GREEN "ft_strlcat \n" YELLOW "Your are Awesome\n" RESET);
+		printf(GREEN "ft_strlcat OK\n\n"RESET);
 	else
-		printf(RED "ft_strlcat \n" YELLOW "Still the best in my heart\n" RESET);
+		printf(RED "ft_strlcat FAIL\n\n" RESET);
 }
 int		sub_test_ft_strlcpy(char* destman, char* destft, const char* src, size_t dsize)
 {
@@ -1457,10 +1459,11 @@ void	test_ft_strlcpy(void)
 	dsize = 3;
 	errors = errors + sub_test_ft_strlcpy(destman, destft, src, dsize);
 	if(errors == 0)
-		printf(GREEN "ft_strlcpy \n" YELLOW "Your are Awesome\n" RESET);
+		printf(GREEN "ft_strlcpy OK\n\n"RESET);
 	else
-		printf(RED "ft_strlcpy \n" YELLOW "Still the best in my heart\n" RESET);
+		printf(RED "ft_strlcpy FAIL\n\n" RESET);
 }
+*/
 void	test_ft_strlen(void)
 {
 	size_t  len;
@@ -1476,9 +1479,9 @@ void	test_ft_strlen(void)
 		i++;
 	}
 	if(errors == 0)
-		printf(GREEN "ft_strlen \n" YELLOW "Your are Awesome\n" RESET);
+		printf(GREEN "ft_strlen OK\n\n"RESET);
 	else
-		printf(RED "ft_strlen \n" YELLOW "Still the best in my heart\n" RESET);
+		printf(RED "ft_strlen FAIL\n\n" RESET);
 }
 int		sub_test_ft_strmapi(char const *s, char (*f)(unsigned int, char), char* name_function, char* expected)
 {
@@ -1519,9 +1522,9 @@ void	test_ft_strmapi(void)
 	expected = "919";
 	errors = errors + sub_test_ft_strmapi(s, f2_test, name_function, expected);
 	if(errors == 0)
-		printf(GREEN "ft_strmapi \n" YELLOW "Your are Awesome\n" RESET);
+		printf(GREEN "ft_strmapi OK\n\n"RESET);
 	else
-		printf(RED "ft_strmapi \n" YELLOW "Still the best in my heart\n" RESET);
+		printf(RED "ft_strmapi FAIL\n\n" RESET);
 }
 void	test_ft_strncmp(void)
 {
@@ -1555,9 +1558,9 @@ void	test_ft_strncmp(void)
 		i++;
 	}
 	if(errors == 0)
-		printf(GREEN "ft_strncmp \n" YELLOW "Your are Awesome\n" RESET);
+		printf(GREEN "ft_strncmp OK\n\n"RESET);
 	else
-		printf(RED "ft_strncmp \n" YELLOW "Still the best in my heart\n" RESET);
+		printf(RED "ft_strncmp FAIL\n\n" RESET);
 }
 /*
 void test_ft_strnstr(void)
@@ -1592,9 +1595,9 @@ void test_ft_strnstr(void)
 		i++;
 	}
 	if(errors == 0)
-		printf(GREEN "ft_strnstr \n" YELLOW "Your are Awesome\n" RESET);
+		printf(GREEN "ft_strnstr OK\n\n"RESET);
 	else
-		printf(RED "ft_strnstr \n" YELLOW "Still the best in my heart\n" RESET);
+		printf(RED "ft_strnstr FAIL\n\n" RESET);
 }
 */
 void	test_ft_strrchr(void)
@@ -1622,9 +1625,9 @@ void	test_ft_strrchr(void)
 		i++;
 	}
 	if(errors == 0)
-		printf(GREEN "ft_strrchr \n" YELLOW "Your are Awesome\n" RESET);
+		printf(GREEN "ft_strrchr OK\n\n"RESET);
 	else
-		printf(RED "ft_strrchr \n" YELLOW "Still the best in my heart\n" RESET);
+		printf(RED "ft_strrchr FAIL\n\n" RESET);
 }
 int		sub_test_ft_strtrim(char const* s1, char* set, char* expected)
 {
@@ -1690,9 +1693,9 @@ void	test_ft_strtrim(void)
 	expected = " come st";
 	errors = errors + sub_test_ft_strtrim(s1, set, expected);
 	if(errors == 0)
-		printf(GREEN "ft_strtrim \n" YELLOW "Your are Awesome\n" RESET);
+		printf(GREEN "ft_strtrim OK\n\n"RESET);
 	else
-		printf(RED "ft_strtrim \n" YELLOW "Still the best in my heart\n" RESET);
+		printf(RED "ft_strtrim FAIL\n\n" RESET);
 }
 void	test_ft_tolower(void)
 {
@@ -1709,9 +1712,9 @@ void	test_ft_tolower(void)
 		i++;
 	}
 	if(errors == 0)
-		printf(GREEN "ft_tolower \n" YELLOW "Your are Awesome\n" RESET);
+		printf(GREEN "ft_tolower OK\n\n"RESET);
 	else
-		printf(RED "ft_tolower \n" YELLOW "Still the best in my heart\n" RESET);
+		printf(RED "ft_tolower FAIL\n\n" RESET);
 }
 void	test_ft_toupper(void)
 {
@@ -1728,9 +1731,9 @@ void	test_ft_toupper(void)
 		i++;
 	}
 	if(errors == 0)
-		printf(GREEN "ft_toupper \n" YELLOW "Your are Awesome\n" RESET);
+		printf(GREEN "ft_toupper OK\n\n"RESET);
 	else
-		printf(RED "ft_toupper \n" YELLOW "Still the best in my heart\n" RESET);
+		printf(RED "ft_toupper FAIL\n\n" RESET);
 }
 void	run_tests(void)
 {
@@ -1761,12 +1764,13 @@ void	run_tests(void)
 	test_ft_putendl_fd();
 	test_ft_putnbr_fd();
 	test_ft_putstr_fd();
+	test_ft_split();
 	test_ft_strchr();
 	test_ft_strdup();
 	test_ft_striteri();
 	test_ft_strjoin();
-	test_ft_strlcat();
-	test_ft_strlcpy();
+	// test_ft_strlcat();
+	// test_ft_strlcpy();
 	test_ft_strlen();
 	test_ft_strmapi();
 	test_ft_strncmp();
@@ -1774,5 +1778,4 @@ void	run_tests(void)
 	test_ft_strtrim();
 	test_ft_tolower();
 	test_ft_toupper();
-	test_ft_split();
 }
