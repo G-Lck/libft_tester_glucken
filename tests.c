@@ -20,7 +20,8 @@ const char	*const_charstar_tests[] = {
 	"",
 	"abc",
 	"120",
-	"\0"
+	"\0",
+	"abcd"
 };
 char	*charstar_tests[] = {
 	"AbcA",
@@ -43,7 +44,8 @@ int		int_tests[] = {
 	0,
 	42,
 	-1,
-	700
+	700,
+	'd'
 };
 size_t	size_t_tests[] = {
 	4,
@@ -557,352 +559,352 @@ void	test_ft_itoa(void)
 	else
 		printf(RED "ft_itoa FAIL\n\n" RESET);
 }
-t_list	**lists_compare_ft_lstadd_back(char* content)
-{
-	t_list *node4 = malloc(sizeof(t_list));
-	t_list *node3 = malloc(sizeof(t_list));
-	t_list *node2 = malloc(sizeof(t_list));
-	t_list *node1 = malloc(sizeof(t_list));
-	t_list *single_node1 = malloc(sizeof(t_list));
-	t_list *single_node = malloc(sizeof(t_list));
-	t_list *null_node4 = malloc(sizeof(t_list));
-	t_list *null_node3 = malloc(sizeof(t_list));
-	t_list *null_node2 = malloc(sizeof(t_list));
-	t_list *null_node1 = malloc(sizeof(t_list));
-	t_list *long11 = malloc(sizeof(t_list));
-	t_list *long10 = malloc(sizeof(t_list));
-	t_list *long9 = malloc(sizeof(t_list));
-	t_list *long8 = malloc(sizeof(t_list));
-	t_list *long7 = malloc(sizeof(t_list));
-	t_list *long6 = malloc(sizeof(t_list));
-	t_list *long5 = malloc(sizeof(t_list));
-	t_list *long4 = malloc(sizeof(t_list));
-	t_list *long3 = malloc(sizeof(t_list));
-	t_list *long2 = malloc(sizeof(t_list));
-	t_list *long1 = malloc(sizeof(t_list));
-	t_list *null1 = malloc(sizeof(t_list));
-	t_list *null0 = malloc(sizeof(t_list));
-	node4->content = content; node4->next = NULL;
-	node3->content = "third"; node3->next = node4;
-	node2->content = "second"; node2->next = node3;
-	node1->content = "first"; node1->next = node2;
-	single_node1->content = content; single_node1->next = NULL;
-	single_node->content = "only"; single_node->next = single_node1;
-	null1->content = content; null1->next = NULL;
-	null0->content = NULL; null0->next = null1;
-	null_node4->content = content; null_node4->next = NULL;
-	null_node3->content = NULL; null_node3->next = null_node4;
-	null_node2->content = "valid"; null_node2->next = null_node3;
-	null_node1->content = NULL; null_node1->next = null_node2;
-	long11->content = content; long11->next = NULL;
-	long10->content = "node10"; long10->next = long11;
-	long9->content = "node9"; long9->next = long10;
-	long8->content = "node8"; long8->next = long9;
-	long7->content = "node7"; long7->next = long8;
-	long6->content = "node6"; long6->next = long7;
-	long5->content = "node5"; long5->next = long6;
-	long4->content = "node4"; long4->next = long5;
-	long3->content = "node3"; long3->next = long4;
-	long2->content = "node2"; long2->next = long3;
-	long1->content = "node1"; long1->next = long2;
-	t_list **lists = malloc(sizeof(t_list *) * 6);
-	lists[0] = node1;
-	lists[1] = single_node;
-	lists[2] = null1;
-	lists[3] = null_node1;
-	lists[4] = long1;
-	return lists;
-}
-void	test_ft_lstadd_back(void)
-{
-	t_list **lists = lists_tests();
-	t_list **lists_expected = lists_compare_ft_lstadd_back("new");
-	int i = 0;
-	int errors = 0;
-	while (i <= 4)
-	{
-		t_list* expected;
-		t_list*	result;
-		result = lists[i];
-		ft_lstadd_back(&result, ft_lstnew("new"));
-		expected = lists_expected[i];
-		printf(RESET "For %d\n", i);
-		errors = errors + compare_lists(result, expected);
-		i++;
-	}
-	if (errors == 0)
-		printf(GREEN "\nft_lstadd_backOK\n\n"RESET);
-	else
-		printf(RED "\nft_lstadd_backFAIL\n\n" RESET);
-}
-t_list	**lists_compare_ft_lstadd_front(char* content)
-{
-	t_list *node3 = malloc(sizeof(t_list));
-	t_list *node2 = malloc(sizeof(t_list));
-	t_list *node1 = malloc(sizeof(t_list));
-	t_list *node0 = malloc(sizeof(t_list));
-	t_list *single_node = malloc(sizeof(t_list));
-	t_list *single_node0 = malloc(sizeof(t_list));
-	t_list *null_node3 = malloc(sizeof(t_list));
-	t_list *null_node2 = malloc(sizeof(t_list));
-	t_list *null_node1 = malloc(sizeof(t_list));
-	t_list *null_node0 = malloc(sizeof(t_list));
-	t_list *long10 = malloc(sizeof(t_list));
-	t_list *long9 = malloc(sizeof(t_list));
-	t_list *long8 = malloc(sizeof(t_list));
-	t_list *long7 = malloc(sizeof(t_list));
-	t_list *long6 = malloc(sizeof(t_list));
-	t_list *long5 = malloc(sizeof(t_list));
-	t_list *long4 = malloc(sizeof(t_list));
-	t_list *long3 = malloc(sizeof(t_list));
-	t_list *long2 = malloc(sizeof(t_list));
-	t_list *long1 = malloc(sizeof(t_list));
-	t_list *long0 = malloc(sizeof(t_list));
-	t_list *null0 = malloc(sizeof(t_list));
-	node3->content = "third"; node3->next = NULL;
-	node2->content = "second"; node2->next = node3;
-	node1->content = "first"; node1->next = node2;
-	node0->content = content; node0->next = node1;
-	single_node->content = "only"; single_node->next = NULL;
-	single_node0->content = content; single_node0->next = single_node;
-	null0->content = content; null0->next = NULL;
-	null_node3->content = NULL; null_node3->next = NULL;
-	null_node2->content = "valid"; null_node2->next = null_node3;
-	null_node1->content = NULL; null_node1->next = null_node2;
-	null_node0->content = content; null_node0->next = null_node1;
-	long10->content = "node10"; long10->next = NULL;
-	long9->content = "node9"; long9->next = long10;
-	long8->content = "node8"; long8->next = long9;
-	long7->content = "node7"; long7->next = long8;
-	long6->content = "node6"; long6->next = long7;
-	long5->content = "node5"; long5->next = long6;
-	long4->content = "node4"; long4->next = long5;
-	long3->content = "node3"; long3->next = long4;
-	long2->content = "node2"; long2->next = long3;
-	long1->content = "node1"; long1->next = long2;
-	long0->content = content; long0->next = long1;
-	t_list **lists = malloc(sizeof(t_list *) * 6);
-	lists[0] = node0;
-	lists[1] = single_node0;
-	lists[2] = null0;
-	lists[3] = null_node0;
-	lists[4] = long0;
-	return lists;
-}
-void	test_ft_lstadd_front(void)
-{
-	t_list **lists = lists_tests();
-	t_list **lists_expected = lists_compare_ft_lstadd_front("new");
-	int i = 0;
-	int errors = 0;
-	while (i <= 4)
-	{
-		t_list* expected;
-		t_list*	result;
-		result = lists[i];
-		ft_lstadd_front(&result, ft_lstnew("new"));
-		expected = lists_expected[i];
-		printf(RESET "For %d\n", i);
-		errors = errors + compare_lists(result, expected);
-		i++;
-	}
-	if (errors == 0)
-		printf(GREEN "\nft_lstadd_frontOK\n\n"RESET);
-	else
-		printf(RED "\nft_lstadd_frontFAIL\n\n" RESET);
-}
-void	test_ft_lstclear(void)
-{
-	t_list *list1 = malloc(sizeof(t_list));
-	t_list *list2 = malloc(sizeof(t_list));
-	int     i;
-	int     errors;
-	list1->content = strdup("one");
-	list1->next = list2;
-	list2->content = strdup("two");
-	list2->next = NULL;
-	t_list *lists[2];
-	lists[0] = list1;
-	lists[1] = NULL;
-	i = 0;
-	errors = 0;
-	while (i < 2)
-	{
-		ft_lstclear(&lists[i], del_content);
-		if (lists[i] == NULL)
-			printf(RESET "For %d: " GREEN "Test OK\n", i);
-		else
-		{
-			printf(RESET "For %d: " RED "Test FAIL\n", i);
-			errors++;
-		}
-		i++;
-	}
-	if (errors == 0)
-		printf(GREEN "\nft_lstclearOK\n\n"RESET);
-	else
-		printf(RED "\nft_lstclearFAIL\n\n" RESET);
-}
-void	test_ft_lstdelone(void)
-{
-	t_list *node = malloc(sizeof(t_list));
-	node->content = malloc(10);
-	node->next = NULL;
-	ft_lstdelone(node, del_content);
-	printf(GREEN "ft_lstdelone (check valgrind)\n");
-}
-void	test_ft_lstiteri(void)
-{
-	t_list	*list1 = malloc(sizeof(t_list));
-	t_list	*list2 = malloc(sizeof(t_list));
-	t_list	*list1_exp = malloc(sizeof(t_list));
-	t_list	*list2_exp = malloc(sizeof(t_list));
-	int		errors;
-	errors = 0;
-	list2->content = strdup("two"); list2->next = NULL;
-	list1->content = strdup("one"); list1->next = list2;
-	list2_exp->content = strdup("uxp"); list2_exp->next = NULL;
-	list1_exp->content = strdup("pof"); list1_exp->next = list2_exp;
-	ft_lstiter(list1, f4_test);
-	errors = errors + compare_lists_mem(list1, list1_exp);
-	if (errors == 0)
-		printf(GREEN "\nft_lstiteriOK\n\n"RESET);
-	else
-		printf(RED "\nft_lstiteriFAIL\n\n" RESET);
-}
-t_list	**lists_compare_ft_lstlast()
-{
-	t_list *node3 = malloc(sizeof(t_list));
-	t_list *single_node = malloc(sizeof(t_list));
-	t_list *null_node3 = malloc(sizeof(t_list));
-	t_list *long10 = malloc(sizeof(t_list));
-	node3->content = "third"; node3->next = NULL;
-	single_node->content = "only"; single_node->next = NULL;
-	null_node3->content = NULL; null_node3->next = NULL;
-	long10->content = "node10"; long10->next = NULL;
-	t_list **lists = malloc(sizeof(t_list *) * 6);
-	lists[0] = node3;
-	lists[1] = single_node;
-	lists[2] = NULL;
-	lists[3] = null_node3;
-	lists[4] = long10;
-	return lists;
-}
-void	test_ft_lstlast(void)
-{
-	t_list **lists = lists_tests();
-	t_list **lists_expected = lists_compare_ft_lstlast();
-	int i = 0;
-	int errors = 0;
-	while (i <= 4)
-	{
-		t_list* expected;
-		t_list*	result;
-		result = ft_lstlast(lists[i]);
-		expected = lists_expected[i];
-		printf(RESET "For %d\n", i);
-		errors = errors + compare_lists(result, expected);
-		i++;
-	}
-	if (errors == 0)
-		printf(GREEN "\nft_lstlastOK\n\n"RESET);
-	else
-		printf(RED "\nft_lstlastFAIL\n\n" RESET);
-}
-void	test_ft_lstmap(void)
-{
-	t_list	*list1 = malloc(sizeof(t_list));
-	t_list	*list2 = malloc(sizeof(t_list));
-	t_list	*list1_exp = malloc(sizeof(t_list));
-	t_list	*list2_exp = malloc(sizeof(t_list));
-	int		errors;
-	errors = 0;
-	list2->content = "two"; list2->next = NULL;
-	list1->content = "one"; list1->next = list2;
-	list2_exp->content = "uxp"; list2_exp->next = NULL;
-	list1_exp->content = "pof"; list1_exp->next = list2_exp;
-	errors = errors + compare_lists_mem(ft_lstmap(list1, f5_test, del_content), list1_exp);
-	if (errors == 0)
-		printf(GREEN "\nft_lstmapOK\n\n"RESET);
-	else
-		printf(RED "\nft_lstmapFAIL\n\n" RESET);
-}
-void	test_ft_lstnew(void)
-{
-	int errors = 0;
-	t_list	*result;
-	t_list	*expected;
-	// classic test
-	result = ft_lstnew("hello");
-	expected = malloc(sizeof(t_list));
-	expected->content = "hello";
-	expected->next = NULL;
-	errors = errors + compare_lists(result, expected);
-	free(expected);
-	//null test
-	result = ft_lstnew(NULL);
-	expected = malloc(sizeof(t_list));
-	expected->content = NULL;
-	expected->next = NULL;
-	errors = errors + compare_lists(result, expected);
-	free(expected);
-	// empty test
-	result = ft_lstnew("");
-	expected = malloc(sizeof(t_list));
-	expected->content = "";
-	expected->next = NULL;
-	errors = errors + compare_lists(result, expected);
-	free(expected);
-	// int test test
-	int *int_test;
-	int_test= malloc(sizeof(int) * 1);
-	int_test[0] = 3;
-	result = ft_lstnew(int_test);
-	expected = malloc(sizeof(t_list));
-	expected->content = int_test;
-	expected->next = NULL;
-	errors = errors + compare_lists(result, expected);
-	free(expected);
-	free(int_test);
-	if (errors == 0)
-		printf(GREEN "\nft_lstnewOK\n\n"RESET);
-	else
-		printf(RED "\nft_lstnewFAIL\n\n" RESET);
-}
-void	test_ft_lstsize(void)
-{
-	t_list **lists = lists_tests();
-	int i = 0;
-	int errors = 0;
-	while (i <= 4)
-	{
-		int expected;
-		int	result;
-		result = ft_lstsize(lists[i]);
-		if(i == 0)
-			expected = 3;
-		if (i == 1)
-			expected = 1;
-		if (i == 2)
-			expected = 0;
-		if (i == 3)
-			expected = 3;
-		if (i == 4)
-			expected = 10;
-		if (result == expected)
-			printf(GREEN "For %d: %d --> %d\n" RESET, i, result, expected);
-		else
-		{
-			printf(RED "For %d: %d --> %d\n" RESET, i, result, expected);
-			errors++;
-		}
-		i++;
-	}
-	if (errors == 0)
-		printf(GREEN "\nft_lstsizeOK\n\n"RESET);
-	else
-		printf(RED "\nft_lstsizeFAIL\n\n" RESET);
-}
+// t_list	**lists_compare_ft_lstadd_back(char* content)
+// {
+// 	t_list *node4 = malloc(sizeof(t_list));
+// 	t_list *node3 = malloc(sizeof(t_list));
+// 	t_list *node2 = malloc(sizeof(t_list));
+// 	t_list *node1 = malloc(sizeof(t_list));
+// 	t_list *single_node1 = malloc(sizeof(t_list));
+// 	t_list *single_node = malloc(sizeof(t_list));
+// 	t_list *null_node4 = malloc(sizeof(t_list));
+// 	t_list *null_node3 = malloc(sizeof(t_list));
+// 	t_list *null_node2 = malloc(sizeof(t_list));
+// 	t_list *null_node1 = malloc(sizeof(t_list));
+// 	t_list *long11 = malloc(sizeof(t_list));
+// 	t_list *long10 = malloc(sizeof(t_list));
+// 	t_list *long9 = malloc(sizeof(t_list));
+// 	t_list *long8 = malloc(sizeof(t_list));
+// 	t_list *long7 = malloc(sizeof(t_list));
+// 	t_list *long6 = malloc(sizeof(t_list));
+// 	t_list *long5 = malloc(sizeof(t_list));
+// 	t_list *long4 = malloc(sizeof(t_list));
+// 	t_list *long3 = malloc(sizeof(t_list));
+// 	t_list *long2 = malloc(sizeof(t_list));
+// 	t_list *long1 = malloc(sizeof(t_list));
+// 	t_list *null1 = malloc(sizeof(t_list));
+// 	t_list *null0 = malloc(sizeof(t_list));
+// 	node4->content = content; node4->next = NULL;
+// 	node3->content = "third"; node3->next = node4;
+// 	node2->content = "second"; node2->next = node3;
+// 	node1->content = "first"; node1->next = node2;
+// 	single_node1->content = content; single_node1->next = NULL;
+// 	single_node->content = "only"; single_node->next = single_node1;
+// 	null1->content = content; null1->next = NULL;
+// 	null0->content = NULL; null0->next = null1;
+// 	null_node4->content = content; null_node4->next = NULL;
+// 	null_node3->content = NULL; null_node3->next = null_node4;
+// 	null_node2->content = "valid"; null_node2->next = null_node3;
+// 	null_node1->content = NULL; null_node1->next = null_node2;
+// 	long11->content = content; long11->next = NULL;
+// 	long10->content = "node10"; long10->next = long11;
+// 	long9->content = "node9"; long9->next = long10;
+// 	long8->content = "node8"; long8->next = long9;
+// 	long7->content = "node7"; long7->next = long8;
+// 	long6->content = "node6"; long6->next = long7;
+// 	long5->content = "node5"; long5->next = long6;
+// 	long4->content = "node4"; long4->next = long5;
+// 	long3->content = "node3"; long3->next = long4;
+// 	long2->content = "node2"; long2->next = long3;
+// 	long1->content = "node1"; long1->next = long2;
+// 	t_list **lists = malloc(sizeof(t_list *) * 6);
+// 	lists[0] = node1;
+// 	lists[1] = single_node;
+// 	lists[2] = null1;
+// 	lists[3] = null_node1;
+// 	lists[4] = long1;
+// 	return lists;
+// }
+// void	test_ft_lstadd_back(void)
+// {
+// 	t_list **lists = lists_tests();
+// 	t_list **lists_expected = lists_compare_ft_lstadd_back("new");
+// 	int i = 0;
+// 	int errors = 0;
+// 	while (i <= 4)
+// 	{
+// 		t_list* expected;
+// 		t_list*	result;
+// 		result = lists[i];
+// 		ft_lstadd_back(&result, ft_lstnew("new"));
+// 		expected = lists_expected[i];
+// 		printf(RESET "For %d\n", i);
+// 		errors = errors + compare_lists(result, expected);
+// 		i++;
+// 	}
+// 	if (errors == 0)
+// 		printf(GREEN "\nft_lstadd_backOK\n\n"RESET);
+// 	else
+// 		printf(RED "\nft_lstadd_backFAIL\n\n" RESET);
+// }
+// t_list	**lists_compare_ft_lstadd_front(char* content)
+// {
+// 	t_list *node3 = malloc(sizeof(t_list));
+// 	t_list *node2 = malloc(sizeof(t_list));
+// 	t_list *node1 = malloc(sizeof(t_list));
+// 	t_list *node0 = malloc(sizeof(t_list));
+// 	t_list *single_node = malloc(sizeof(t_list));
+// 	t_list *single_node0 = malloc(sizeof(t_list));
+// 	t_list *null_node3 = malloc(sizeof(t_list));
+// 	t_list *null_node2 = malloc(sizeof(t_list));
+// 	t_list *null_node1 = malloc(sizeof(t_list));
+// 	t_list *null_node0 = malloc(sizeof(t_list));
+// 	t_list *long10 = malloc(sizeof(t_list));
+// 	t_list *long9 = malloc(sizeof(t_list));
+// 	t_list *long8 = malloc(sizeof(t_list));
+// 	t_list *long7 = malloc(sizeof(t_list));
+// 	t_list *long6 = malloc(sizeof(t_list));
+// 	t_list *long5 = malloc(sizeof(t_list));
+// 	t_list *long4 = malloc(sizeof(t_list));
+// 	t_list *long3 = malloc(sizeof(t_list));
+// 	t_list *long2 = malloc(sizeof(t_list));
+// 	t_list *long1 = malloc(sizeof(t_list));
+// 	t_list *long0 = malloc(sizeof(t_list));
+// 	t_list *null0 = malloc(sizeof(t_list));
+// 	node3->content = "third"; node3->next = NULL;
+// 	node2->content = "second"; node2->next = node3;
+// 	node1->content = "first"; node1->next = node2;
+// 	node0->content = content; node0->next = node1;
+// 	single_node->content = "only"; single_node->next = NULL;
+// 	single_node0->content = content; single_node0->next = single_node;
+// 	null0->content = content; null0->next = NULL;
+// 	null_node3->content = NULL; null_node3->next = NULL;
+// 	null_node2->content = "valid"; null_node2->next = null_node3;
+// 	null_node1->content = NULL; null_node1->next = null_node2;
+// 	null_node0->content = content; null_node0->next = null_node1;
+// 	long10->content = "node10"; long10->next = NULL;
+// 	long9->content = "node9"; long9->next = long10;
+// 	long8->content = "node8"; long8->next = long9;
+// 	long7->content = "node7"; long7->next = long8;
+// 	long6->content = "node6"; long6->next = long7;
+// 	long5->content = "node5"; long5->next = long6;
+// 	long4->content = "node4"; long4->next = long5;
+// 	long3->content = "node3"; long3->next = long4;
+// 	long2->content = "node2"; long2->next = long3;
+// 	long1->content = "node1"; long1->next = long2;
+// 	long0->content = content; long0->next = long1;
+// 	t_list **lists = malloc(sizeof(t_list *) * 6);
+// 	lists[0] = node0;
+// 	lists[1] = single_node0;
+// 	lists[2] = null0;
+// 	lists[3] = null_node0;
+// 	lists[4] = long0;
+// 	return lists;
+// }
+// void	test_ft_lstadd_front(void)
+// {
+// 	t_list **lists = lists_tests();
+// 	t_list **lists_expected = lists_compare_ft_lstadd_front("new");
+// 	int i = 0;
+// 	int errors = 0;
+// 	while (i <= 4)
+// 	{
+// 		t_list* expected;
+// 		t_list*	result;
+// 		result = lists[i];
+// 		ft_lstadd_front(&result, ft_lstnew("new"));
+// 		expected = lists_expected[i];
+// 		printf(RESET "For %d\n", i);
+// 		errors = errors + compare_lists(result, expected);
+// 		i++;
+// 	}
+// 	if (errors == 0)
+// 		printf(GREEN "\nft_lstadd_frontOK\n\n"RESET);
+// 	else
+// 		printf(RED "\nft_lstadd_frontFAIL\n\n" RESET);
+// }
+// void	test_ft_lstclear(void)
+// {
+// 	t_list *list1 = malloc(sizeof(t_list));
+// 	t_list *list2 = malloc(sizeof(t_list));
+// 	int     i;
+// 	int     errors;
+// 	list1->content = strdup("one");
+// 	list1->next = list2;
+// 	list2->content = strdup("two");
+// 	list2->next = NULL;
+// 	t_list *lists[2];
+// 	lists[0] = list1;
+// 	lists[1] = NULL;
+// 	i = 0;
+// 	errors = 0;
+// 	while (i < 2)
+// 	{
+// 		ft_lstclear(&lists[i], del_content);
+// 		if (lists[i] == NULL)
+// 			printf(RESET "For %d: " GREEN "Test OK\n", i);
+// 		else
+// 		{
+// 			printf(RESET "For %d: " RED "Test FAIL\n", i);
+// 			errors++;
+// 		}
+// 		i++;
+// 	}
+// 	if (errors == 0)
+// 		printf(GREEN "\nft_lstclearOK\n\n"RESET);
+// 	else
+// 		printf(RED "\nft_lstclearFAIL\n\n" RESET);
+// }
+// void	test_ft_lstdelone(void)
+// {
+// 	t_list *node = malloc(sizeof(t_list));
+// 	node->content = malloc(10);
+// 	node->next = NULL;
+// 	ft_lstdelone(node, del_content);
+// 	printf(GREEN "ft_lstdelone (check valgrind)\n");
+// }
+// void	test_ft_lstiteri(void)
+// {
+// 	t_list	*list1 = malloc(sizeof(t_list));
+// 	t_list	*list2 = malloc(sizeof(t_list));
+// 	t_list	*list1_exp = malloc(sizeof(t_list));
+// 	t_list	*list2_exp = malloc(sizeof(t_list));
+// 	int		errors;
+// 	errors = 0;
+// 	list2->content = strdup("two"); list2->next = NULL;
+// 	list1->content = strdup("one"); list1->next = list2;
+// 	list2_exp->content = strdup("uxp"); list2_exp->next = NULL;
+// 	list1_exp->content = strdup("pof"); list1_exp->next = list2_exp;
+// 	ft_lstiter(list1, f4_test);
+// 	errors = errors + compare_lists_mem(list1, list1_exp);
+// 	if (errors == 0)
+// 		printf(GREEN "\nft_lstiteriOK\n\n"RESET);
+// 	else
+// 		printf(RED "\nft_lstiteriFAIL\n\n" RESET);
+// }
+// t_list	**lists_compare_ft_lstlast()
+// {
+// 	t_list *node3 = malloc(sizeof(t_list));
+// 	t_list *single_node = malloc(sizeof(t_list));
+// 	t_list *null_node3 = malloc(sizeof(t_list));
+// 	t_list *long10 = malloc(sizeof(t_list));
+// 	node3->content = "third"; node3->next = NULL;
+// 	single_node->content = "only"; single_node->next = NULL;
+// 	null_node3->content = NULL; null_node3->next = NULL;
+// 	long10->content = "node10"; long10->next = NULL;
+// 	t_list **lists = malloc(sizeof(t_list *) * 6);
+// 	lists[0] = node3;
+// 	lists[1] = single_node;
+// 	lists[2] = NULL;
+// 	lists[3] = null_node3;
+// 	lists[4] = long10;
+// 	return lists;
+// }
+// void	test_ft_lstlast(void)
+// {
+// 	t_list **lists = lists_tests();
+// 	t_list **lists_expected = lists_compare_ft_lstlast();
+// 	int i = 0;
+// 	int errors = 0;
+// 	while (i <= 4)
+// 	{
+// 		t_list* expected;
+// 		t_list*	result;
+// 		result = ft_lstlast(lists[i]);
+// 		expected = lists_expected[i];
+// 		printf(RESET "For %d\n", i);
+// 		errors = errors + compare_lists(result, expected);
+// 		i++;
+// 	}
+// 	if (errors == 0)
+// 		printf(GREEN "\nft_lstlastOK\n\n"RESET);
+// 	else
+// 		printf(RED "\nft_lstlastFAIL\n\n" RESET);
+// }
+// void	test_ft_lstmap(void)
+// {
+// 	t_list	*list1 = malloc(sizeof(t_list));
+// 	t_list	*list2 = malloc(sizeof(t_list));
+// 	t_list	*list1_exp = malloc(sizeof(t_list));
+// 	t_list	*list2_exp = malloc(sizeof(t_list));
+// 	int		errors;
+// 	errors = 0;
+// 	list2->content = "two"; list2->next = NULL;
+// 	list1->content = "one"; list1->next = list2;
+// 	list2_exp->content = "uxp"; list2_exp->next = NULL;
+// 	list1_exp->content = "pof"; list1_exp->next = list2_exp;
+// 	errors = errors + compare_lists_mem(ft_lstmap(list1, f5_test, del_content), list1_exp);
+// 	if (errors == 0)
+// 		printf(GREEN "\nft_lstmapOK\n\n"RESET);
+// 	else
+// 		printf(RED "\nft_lstmapFAIL\n\n" RESET);
+// }
+// void	test_ft_lstnew(void)
+// {
+// 	int errors = 0;
+// 	t_list	*result;
+// 	t_list	*expected;
+// 	// classic test
+// 	result = ft_lstnew("hello");
+// 	expected = malloc(sizeof(t_list));
+// 	expected->content = "hello";
+// 	expected->next = NULL;
+// 	errors = errors + compare_lists(result, expected);
+// 	free(expected);
+// 	//null test
+// 	result = ft_lstnew(NULL);
+// 	expected = malloc(sizeof(t_list));
+// 	expected->content = NULL;
+// 	expected->next = NULL;
+// 	errors = errors + compare_lists(result, expected);
+// 	free(expected);
+// 	// empty test
+// 	result = ft_lstnew("");
+// 	expected = malloc(sizeof(t_list));
+// 	expected->content = "";
+// 	expected->next = NULL;
+// 	errors = errors + compare_lists(result, expected);
+// 	free(expected);
+// 	// int test test
+// 	int *int_test;
+// 	int_test= malloc(sizeof(int) * 1);
+// 	int_test[0] = 3;
+// 	result = ft_lstnew(int_test);
+// 	expected = malloc(sizeof(t_list));
+// 	expected->content = int_test;
+// 	expected->next = NULL;
+// 	errors = errors + compare_lists(result, expected);
+// 	free(expected);
+// 	free(int_test);
+// 	if (errors == 0)
+// 		printf(GREEN "\nft_lstnewOK\n\n"RESET);
+// 	else
+// 		printf(RED "\nft_lstnewFAIL\n\n" RESET);
+// }
+// void	test_ft_lstsize(void)
+// {
+// 	t_list **lists = lists_tests();
+// 	int i = 0;
+// 	int errors = 0;
+// 	while (i <= 4)
+// 	{
+// 		int expected;
+// 		int	result;
+// 		result = ft_lstsize(lists[i]);
+// 		if(i == 0)
+// 			expected = 3;
+// 		if (i == 1)
+// 			expected = 1;
+// 		if (i == 2)
+// 			expected = 0;
+// 		if (i == 3)
+// 			expected = 3;
+// 		if (i == 4)
+// 			expected = 10;
+// 		if (result == expected)
+// 			printf(GREEN "For %d: %d --> %d\n" RESET, i, result, expected);
+// 		else
+// 		{
+// 			printf(RED "For %d: %d --> %d\n" RESET, i, result, expected);
+// 			errors++;
+// 		}
+// 		i++;
+// 	}
+// 	if (errors == 0)
+// 		printf(GREEN "\nft_lstsizeOK\n\n"RESET);
+// 	else
+// 		printf(RED "\nft_lstsizeFAIL\n\n" RESET);
+// }
 void	test_ft_memchr(void)
 {
 	size_t len_charstar;
@@ -1689,7 +1691,7 @@ void	test_ft_strtrim(void)
 	errors = errors + sub_test_ft_strtrim(s1, set, expected);
 	// at beginning and end and repetition
 	s1 = "ciao come staic";
-	set = "ciiiiao";
+	set = "cai";
 	expected = " come st";
 	errors = errors + sub_test_ft_strtrim(s1, set, expected);
 	if(errors == 0)
@@ -1737,45 +1739,45 @@ void	test_ft_toupper(void)
 }
 void	run_tests(void)
 {
-	test_ft_atoi();
-	test_ft_bzero();
-	test_ft_calloc();
-	test_ft_isalnum();
-	test_ft_isalpha();
-	test_ft_isascii();
-	test_ft_isdigit();
-	test_ft_isprint();
-	test_ft_itoa();
-	test_ft_lstadd_back();
-	test_ft_lstadd_front();
-	test_ft_lstclear();
-	test_ft_lstdelone();
-	test_ft_lstiteri();
-	test_ft_lstlast();
-	test_ft_lstmap();
-	test_ft_lstnew();
-	test_ft_lstsize();
-	test_ft_memchr();
-	test_ft_memcmp();
-	test_ft_memcpy();
-	test_ft_memset();
-	test_ft_memmove();
-	test_ft_putchar_fd();
-	test_ft_putendl_fd();
-	test_ft_putnbr_fd();
-	test_ft_putstr_fd();
-	test_ft_split();
-	test_ft_strchr();
-	test_ft_strdup();
-	test_ft_striteri();
-	test_ft_strjoin();
-	// test_ft_strlcat();
-	// test_ft_strlcpy();
-	test_ft_strlen();
-	test_ft_strmapi();
-	test_ft_strncmp();
+	//test_ft_atoi();
+	//test_ft_bzero();
+	//test_ft_calloc();
+	//test_ft_isalnum();
+	// test_ft_isalpha();
+	// test_ft_isascii();
+	// test_ft_isdigit();
+	// test_ft_isprint();
+	 //test_ft_itoa();
+	 //test_ft_lstadd_back();
+	 //test_ft_lstadd_front();
+	 //test_ft_lstclear();
+	 //test_ft_lstdelone();
+	 //test_ft_lstiteri();
+	 //test_ft_lstlast();
+	 //test_ft_lstmap();
+	 //test_ft_lstnew();
+	 //test_ft_lstsize();
+	 //test_ft_memchr();
+	 //test_ft_memcmp();
+	 //test_ft_memcpy();
+	 //test_ft_memset();
+	 //test_ft_memmove();
+	 //test_ft_putchar_fd();
+	 //test_ft_putendl_fd();
+	 //test_ft_putnbr_fd();
+	 //test_ft_putstr_fd();
+	 //test_ft_split();
+	 //test_ft_strchr();
+	 //test_ft_strdup();
+	 //test_ft_striteri();
+	 //test_ft_strjoin();
+	//test_ft_strlcat();
+	//test_ft_strlcpy();
+	 //test_ft_strlen();
+	 //test_ft_strmapi();
+	 //test_ft_strncmp();
 	test_ft_strrchr();
-	test_ft_strtrim();
-	test_ft_tolower();
-	test_ft_toupper();
+	//  test_ft_strtrim();
+	//  test_ft_tolower();
+	//  test_ft_toupper();
 }

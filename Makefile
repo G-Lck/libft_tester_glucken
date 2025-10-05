@@ -5,7 +5,7 @@ SRCS = main.c tests.c
 OBJS = $(SRCS:.c=.o)
 
 # Path to libft to change
-LIBFT_DIR = /home/glucken/Desktop/42/libft
+LIBFT_DIR = /home/glucken/goinfre/libft
 LIBFT = $(LIBFT_DIR)/libft.a
 
 CC = gcc
